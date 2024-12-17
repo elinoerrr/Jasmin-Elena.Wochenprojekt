@@ -13,3 +13,8 @@
 body {
   padding-top: 60px; 
 }
+
+.paper.container {
+  background-color: aqua;
+  height: max-content;
+}
