@@ -15,6 +15,212 @@ body {
 }
 
 .paper.container {
-  background-color: aqua;
-  height: max-content;
+  position: relative;
+  width: 100vw; 
+  height: 100vh; 
+  background: url('./animierterHintergrund.jpg') no-repeat center center;
+  background-size: auto 100%; 
+  background-position: center center; 
+  background-attachment: fixed; 
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 1;
 }
+
+
+
+
+
+
+.paper.container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.paper.container p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.row.flex-spaces.tabs {
+  position: absolute; 
+  bottom: 5%; 
+  left: 50%; 
+  transform: translate(-50%, 0); 
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  width: 120%; 
+  max-width: 1200px; 
+  z-index: 10;
+}
+
+
+.row.flex-spaces.tabs input {
+  display: none; 
+ 
+}
+
+.row.flex-spaces.tabs label {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 10px;
+  color: rgb(17, 17, 29);
+  background-color: rgba(255, 255, 0, 0.527);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.row.flex-spaces.tabs label:hover {
+transform: translateY(-3px); 
+}
+
+
+.content {
+  display: none; 
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+
+#tab1:checked ~ .content#content1,
+#tab2:checked ~ .content#content2,
+#tab3:checked ~ .content#content3,
+#tab4:checked ~ .content#content4 {
+  display: block; 
+}
+/* Container für die Karten */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 Spalten */
+  gap: 20px; /* Abstand zwischen den Karten */
+  justify-items: center; /* Zentriert die Karten innerhalb der Spalten */
+  align-items: center; /* Zentriert die Karten vertikal */
+  width: 100%;
+  max-width: 1200px; /* Maximale Breite des Containers */
+  margin: 0 auto; /* Zentriert den Container horizontal */
+  padding: 20px; /* Padding für den Container */
+  min-height: 100vh; /* Sorgt dafür, dass der Container mindestens die Höhe des Viewports einnimmt */
+}
+
+/* Stellt sicher, dass jede Karte eine feste Breite hat */
+.card {
+  width: 100%; /* Die Karten nehmen die gesamte Breite der Spalten ein */
+  max-width: 300px; /* Maximale Breite für jede Karte */
+  margin: 0 auto; /* Zentriert die Karten innerhalb der Spalte */
+  box-sizing: border-box; /* Verhindert, dass Padding und Border die Breite beeinflussen */
+}
+
+/* Bild am unteren Ende der Karte */
+.image-bottom {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+footer {
+  background-color: #0e053f;
+  color: #fff;
+  padding: 40px 20px;
+
+  text-align: center;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.footer-left, .footer-middle, .footer-right {
+  width: 30%;
+}
+
+.footer-left h3 a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.footer-left p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.footer-middle h4 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-middle ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-middle ul li {
+  margin-bottom: 1rem;
+}
+
+.footer-middle ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer-middle ul li a:hover {
+  color: #f1c40f;
+}
+
+.social-icons {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons li a {
+  color: #fff;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.social-icons li a:hover {
+  color: #f1c40f;
+}
+
+.footer-bottom {
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-left, .footer-middle, .footer-right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .footer-bottom {
+    text-align: center;
+  }
+}
+
+
+
